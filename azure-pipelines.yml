@@ -1,0 +1,12 @@
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    ConnectedServiceName: 'AzureRmPipeline-conn'
+    subscriptionName: '55ef343f-65be-4677-a814-e62493ba0312'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'resouce123'
+    location: 'Central US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'CreateAzureStorage/azuredeploy.json'
+    deploymentMode: 'Incremental'
